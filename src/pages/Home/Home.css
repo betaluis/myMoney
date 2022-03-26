@@ -1,0 +1,139 @@
+.Home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(var(--vh, 1vh) * 100 - var(--nav-height));
+  min-height: -webkit-fill-available;
+  padding: 1.5rem;
+}
+
+.Home__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 40vh;
+  max-height: 600px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* TransactionForm */
+.TransactionForm {
+  grid-column: 2;
+}
+
+.TransactionForm form {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.TransactionForm form input {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--dark);
+  margin: 0.5rem 0;
+}
+.TransactionForm form input:focus {
+  outline: 1px solid var(--dark);
+}
+
+.TransactionForm form button {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 0;
+  background-color: var(--dark);
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+}
+.TransactionForm form button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.TransactionForm form button:focus {
+  background-color: var(--primary);
+  outline: 1px solid var(--dark);
+}
+
+.TransactionForm h2 {
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+/* TransactionList */
+.TransactionList {
+  grid-row: 1;
+  grid-column: 1;
+  width: 100%;
+  margin: 0 auto;
+  max-height: 60vh;
+  min-height: 50vh;
+}
+
+.TransactionList ul {
+  list-style-type: none;
+  height: 85%;
+  margin-top: 0.75rem;
+  overflow-y: auto;
+}
+
+.TransactionList__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 0;
+  padding-right: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.TransactionList__item-title {
+  margin-right: auto;
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.TransactionList__item-price {
+  margin-right: 10px;
+}
+
+.TransactionList__item-delete {
+  color: var(--dark);
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+.TransactionList__item-delete:hover {
+  color: var(--primary);
+  transform: rotate(45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .Home {
+    display: block;
+  }
+
+  .Home__grid {
+    height: calc(100vh - var(--nav-height));
+    min-height: -webkit-fill-available;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    gap: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .TransactionForm {
+    grid-column: 1;
+  }
+
+  .TransactionList {
+    grid-column: 1;
+    grid-row: 2;
+    max-width: 480px;
+  }
+}

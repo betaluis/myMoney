@@ -1,0 +1,15 @@
+
+.Signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.5rem;
+  height: calc(var(--vh, 1vh) * 100 - var(--nav-height));
+  min-height: -webkit-fill-available;
+}
+
+.Signup h1 { text-align: center; margin-bottom: 1.5rem;}
+
+.Signup form { 
+  max-width: 480px;
+}

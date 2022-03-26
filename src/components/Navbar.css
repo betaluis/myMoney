@@ -1,0 +1,135 @@
+.header__container {
+  position: sticky;
+  width: 100%;
+  background-color: var(--dark);
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: calc(var(--nav-height));
+}
+
+.nav__logo {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.nav__toggle,
+.nav__close,
+.nav__menu-logo {
+  display: none;
+}
+
+.nav__menu {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--white);
+}
+.nav__link:hover {
+  color: var(--primary);
+}
+
+.nav__logout {
+  display: flex;
+  color: white;
+}
+
+.nav__logout span {
+  display: block;
+  margin-right: 20px;
+  text-transform: capitalize;
+}
+
+/* ======== Mobile Styles ========  */
+@media only screen and (max-width: 768px) {
+  .nav__content {
+    height: var(--nav-height);
+  }
+
+  .nav__toggle,
+  .nav__close,
+  .nav__menu-logo {
+    display: block;
+  }
+
+  .nav__toggle {
+    font-size: 1.3rem;
+    color: var(--white);
+    cursor: pointer;
+  }
+
+  .nav {
+    position: absolute;
+    top: 0;
+    left: -100%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
+    height: calc(var(--vh, 1vh) * 100);
+    min-height: -webkit-fill-available;
+    padding: 1.5rem;
+
+    background-color: var(--dark);
+
+    transition: 0.3s;
+    z-index: 100;
+  }
+
+  .nav__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .nav__menu {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .nav__menu-logo {
+    font-size: 3rem;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: auto;
+    line-height: 1;
+  }
+
+  .nav__close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.6rem;
+    color: var(--white);
+    cursor: pointer;
+  }
+
+  .nav__item {
+    font-size: 2rem;
+  }
+
+  .active {
+    left: 0;
+  }
+
+  .nav__logout span {
+    display: none;
+  }
+}
